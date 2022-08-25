@@ -274,9 +274,12 @@ try:
             fig5.add_trace(go.Line(name=f"Shifted {feat}",
                                    x=data_df1_series.index,
                                    y=data_df1_series[feat].shift(periods=lag_user)))
+            fig5.update_xaxes(gridcolor='grey')
+            fig5.update_yaxes(gridcolor='grey')
             corr_user = data_df1_series[chosen_target1].corr(data_df1_series[feat].shift(periods=lag_user))
             fig5.update_layout(xaxis_title=chosen_date1,
                                yaxis_title="Data",
+                               colorway=["#7ee3c9", "#70B0E0"],
                                title=f"Data Correlation: {round(corr_user, 2)}")
 
             st.plotly_chart(fig5,
