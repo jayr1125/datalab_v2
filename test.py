@@ -191,8 +191,6 @@ try:
                     if feature != chosen_target1:
                         st.write(
                             f"Knowing the values of {feature} is useful in predicting {chosen_target1} at lag {i}: {True}")
-        else:
-            st.write("No statistically significant causality was found")
 
     with plot_tab:
         st.subheader(f"Plots for {data1.name}")
