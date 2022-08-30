@@ -317,7 +317,7 @@ try:
                 frequency='infer',
                 prediction_interval=0.95,
                 ensemble=None,
-                model_list='fast',
+                model_list='superfast',
                 max_generations=10,
                 num_validations=2,
                 no_negatives=True
