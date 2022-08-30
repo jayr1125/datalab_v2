@@ -298,18 +298,22 @@ try:
                                                value=5,
                                                step=1)
         if st.button("Forecast"):
-            model = AutoTS(
-                forecast_length=data1_slider,
-                frequency='infer',
-                prediction_interval=0.95,
-                ensemble=None,
-                model_list='fast',
-                max_generations=5,
-                num_validations=1,
-                no_negatives=True
-            )
-
-            model = model.fit(data_df1_series)
+            @st.cache(allow_output_mutation=True)
+            def modeling(slider):
+                model = AutoTS(
+                    forecast_length=slider,
+                    frequency='infer',
+                    prediction_interval=0.95,
+                    ensemble=None,
+                    model_list='fast',
+                    max_generations=10,
+                    num_validations=2,
+                    no_negatives=True
+                )
+                model = model.fit(data_df1_series)
+                return model
+            
+            model = modeling(data1_slider)
             model_name1 = model.best_model_name
             prediction = model.predict()
 
