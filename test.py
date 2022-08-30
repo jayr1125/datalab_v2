@@ -5,21 +5,21 @@ import plotly.graph_objects as go
 from PIL import Image
 from autots import AutoTS
 from autots.tools.shaping import infer_frequency
-import scipy.signal.signaltools
+#import scipy.signal.signaltools
 
-"""
+
 # Work around for scipy error
-def _centered(arr, newsize):
-    # Return the center newsize portion of the array.
-    newsize = np.asarray(newsize)
-    currsize = np.array(arr.shape)
-    startind = (currsize - newsize) // 2
-    endind = startind + newsize
-    myslice = [slice(startind[k], endind[k]) for k in range(len(endind))]
-    return arr[tuple(myslice)]
+#def _centered(arr, newsize):
+#    # Return the center newsize portion of the array.
+#    newsize = np.asarray(newsize)
+#    currsize = np.array(arr.shape)
+#    startind = (currsize - newsize) // 2
+#    endind = startind + newsize
+#    myslice = [slice(startind[k], endind[k]) for k in range(len(endind))]
+#    return arr[tuple(myslice)]
 
-scipy.signal.signaltools._centered = _centered
-"""
+#scipy.signal.signaltools._centered = _centered
+
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.stattools import grangercausalitytests
