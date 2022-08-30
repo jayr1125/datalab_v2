@@ -7,6 +7,7 @@ from autots import AutoTS
 from autots.tools.shaping import infer_frequency
 import scipy.signal.signaltools
 
+"""
 # Work around for scipy error
 def _centered(arr, newsize):
     # Return the center newsize portion of the array.
@@ -18,7 +19,7 @@ def _centered(arr, newsize):
     return arr[tuple(myslice)]
 
 scipy.signal.signaltools._centered = _centered
-
+"""
 from statsmodels.tsa.stattools import adfuller
 from statsmodels.tsa.seasonal import seasonal_decompose
 from statsmodels.tsa.stattools import grangercausalitytests
