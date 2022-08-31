@@ -378,4 +378,4 @@ print("Done Rendering Application!")
 
 end = time.time()
 execution_time = end - start
-st.write(f"Execution Time: {execution_time} seconds")
+st.write(f"Execution Time: {round(execution_time, 2)} seconds")
